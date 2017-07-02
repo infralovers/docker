@@ -28,7 +28,7 @@ RUN apk add zlib libxml2 ruby-io-console \
   nodejs tzdata
 
 <% if @meta.packages? %>
-  RUN apk --update add <%= @meta.packages %>
+  RUN apk --update --update-cache add <%= @meta.packages %>
 <% end %>
 
 RUN gem install --no-ri --no-rdoc jekyll -v<%= @meta.release?? @meta.release : @meta.tag %>
@@ -54,6 +54,7 @@ RUN gem clean
 
 RUN mkdir -p /srv/jekyll && chown -R jekyll:jekyll /srv/jekyll
 RUN echo 'jekyll ALL=NOPASSWD:ALL' >> /etc/sudoers
+RUN s3_website push || true
 RUN cleanup
 
 WORKDIR /srv/jekyll

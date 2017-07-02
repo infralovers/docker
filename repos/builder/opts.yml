@@ -4,6 +4,8 @@ packages:
     - openssh-client
     - lftp
     - git
+    - imagemagick
+    - openjdk8-jre@community
 env:
   all:
     JEKYLL_ENV: production
@@ -19,6 +21,12 @@ gems:
     - jekyll-paginate
     - jekyll-compose
     - jekyll-feed
+    - jekyll-figure
+    - jekyll-seo-tag
+    - jekyll-assets
+    - jekyll-tagging
+    - jekyll-archives
+    - jekyll-admin
     - jekyll-docs
     - RedCloth
     - kramdown
