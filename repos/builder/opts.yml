@@ -6,6 +6,7 @@ packages:
     - git
     - imagemagick
     - openjdk8-jre@community
+    - curl
 env:
   all:
     JEKYLL_ENV: production
@@ -28,6 +29,7 @@ gems:
     - jekyll-archives
     - jekyll-admin
     - jekyll-docs
+    - jekyll-contentful-data-import
     - RedCloth
     - kramdown
     - jemoji
