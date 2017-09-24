@@ -1,5 +1,16 @@
 [![Build Status](https://travis-ci.org/jekyll/docker.svg?branch=master)](https://travis-ci.org/jekyll/docker)
 
+# Build and update the Image:
+
+The `bundle exec` will take quite some time (XZ minutes) with no real output.
+Keep it running!
+
+```
+bundle exec docker-template build builder:latest --no-push  --squash
+docker tag jekyll/builder:3.5.0 infralovers/jekyll-builder:3.5.1
+docker push infralovers/jekyll-builder:3.5.1
+```
+
 # Jekyll Docker Images
 
 Jekyll Docker is a full featured Alpine based Docker image that provides an isolated Jekyll instance with the latest version of Jekyll and a bunch of nice stuff to make your life easier when working with Jekyll in both production and development.  For documentation please visit our wiki at https://github.com/jekyll/docker/wiki where you will find docs and sometimes examples.
